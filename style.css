@@ -1,0 +1,355 @@
+/* ========================================================
+   PEREGRIN — Landing Page
+   Aesthetic: Dark cinematic editorial, luxury minimalism
+   ======================================================== */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-deep: #07070a;
+  --bg-surface: #0c0c12;
+  --text-primary: #e8e4de;
+  --text-secondary: #7a756d;
+  --text-muted: #4a463f;
+  --accent: #b89d6a;
+  --accent-glow: #c4a96f;
+  --accent-dim: rgba(184, 157, 106, 0.12);
+  --divider: rgba(232, 228, 222, 0.06);
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-deep);
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Grain Overlay ---------- */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px;
+}
+
+/* ---------- Ambient Glow ---------- */
+.ambient-glow {
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  height: 70vh;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(184, 157, 106, 0.025) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  animation: ambientPulse 14s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+  0%   { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.15); }
+}
+
+/* ---------- Reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   HERO
+   ========================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* ---------- Logo block ---------- */
+.hero__logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: heroLogoIn 2.2s var(--ease-out-expo) 0.3s forwards;
+}
+
+.hero__logo {
+  width: clamp(280px, 40vw, 500px);
+  height: auto;
+  filter: drop-shadow(0 0 80px rgba(184, 157, 106, 0.06));
+}
+
+@keyframes heroLogoIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- Headline ---------- */
+.hero__headline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: lineReveal 1.6s var(--ease-out-expo) 1.6s forwards;
+}
+
+.hero__headline em {
+  font-style: italic;
+}
+
+@keyframes lineReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Scroll indicator ---------- */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeIn 1s ease 3s forwards;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--text-muted) 40%, transparent);
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50%      { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* ==========================================
+   CTA
+   ========================================== */
+.cta {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+.cta__container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.cta__headline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* WhatsApp Button */
+.cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.1rem 2.8rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    color 0.5s var(--ease-out-expo),
+    border-color 0.5s var(--ease-out-expo),
+    transform 0.5s var(--ease-out-expo),
+    box-shadow 0.5s var(--ease-out-expo);
+}
+
+.cta__button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-out-expo);
+  z-index: -1;
+}
+
+.cta__button:hover {
+  color: var(--bg-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(184, 157, 106, 0.15);
+}
+
+.cta__button:hover::before { transform: scaleX(1); }
+
+.cta__icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.cta__button:hover .cta__icon { transform: scale(1.15); }
+
+/* Email */
+.cta__contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.cta__email {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+.cta__email::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.5s var(--ease-out-expo);
+}
+
+.cta__email:hover { color: var(--accent); }
+.cta__email:hover::after { width: 100%; }
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+  position: relative;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--divider);
+  z-index: 1;
+}
+
+.footer__container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__copy {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .hero { padding: 2rem 1rem; }
+  .hero__content { gap: 2.5rem; }
+  .hero__logo { width: 240px; }
+  .cta { padding: 4rem 1.5rem; }
+  .cta__button {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__logo { width: 200px; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .hero__headline, .hero__logo-wrapper {
+    opacity: 1;
+    transform: none;
+  }
+}
