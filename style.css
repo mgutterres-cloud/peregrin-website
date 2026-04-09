@@ -13,13 +13,13 @@
 :root {
   --bg-deep: #07070a;
   --bg-surface: #0c0c12;
-  --text-primary: #e8e4de;
-  --text-secondary: #7a756d;
-  --text-muted: #4a463f;
+  --text-primary: #F0EEE9; /* Pantone 11-4201 Cloud Dancer */
+  --text-secondary: #D9D6D0; /* Lighter secondary for better readability */
+  --text-muted: #A3A09A; /* Lighter muted for better readability */
   --accent: #b89d6a;
   --accent-glow: #c4a96f;
   --accent-dim: rgba(184, 157, 106, 0.12);
-  --divider: rgba(232, 228, 222, 0.06);
+  --divider: rgba(240, 238, 233, 0.15); /* Cloud Dancer based divider */
 
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
   --font-body: 'Manrope', 'Helvetica Neue', sans-serif;
