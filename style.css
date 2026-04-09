@@ -136,15 +136,6 @@ a { color: inherit; text-decoration: none; }
   filter: drop-shadow(0 0 80px rgba(184, 157, 106, 0.06));
 }
 
-.hero__brand-name {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
-  font-weight: 400;
-  letter-spacing: 0.35em;
-  color: var(--text-primary);
-  text-transform: uppercase;
-}
-
 @keyframes heroLogoIn {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
