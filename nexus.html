@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peregrin Nexus | Inteligência de Cliente</title>
+  <meta name="robots" content="noindex, nofollow"> <!-- Mantém oculto do Google -->
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --nexus-bg: #030305;
+      --nexus-panel: rgba(255, 255, 255, 0.03);
+      --nexus-border: rgba(255, 255, 255, 0.08);
+      --nexus-accent: #b89d6a; /* dourado peregrin */
+      --nexus-red: #d34a4a; /* para nexialista high impact */
+    }
+
+    body {
+      background-color: var(--nexus-bg);
+      color: #f1f1f1;
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .nexus-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .nexus-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--nexus-border);
+      padding-bottom: 2rem;
+    }
+
+    .nexus-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: var(--nexus-accent);
+      margin: 0;
+    }
+
+    .nexus-header p {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-top: 0.5rem;
+    }
+
+    .client-selector {
+      background: var(--nexus-panel);
+      border: 1px solid var(--nexus-border);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .panels {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .panel {
+      background: var(--nexus-panel);
+      border: 1px solid var(--nexus-border);
+      border-radius: 8px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .panel:hover {
+      border-color: rgba(184, 157, 106, 0.4);
+    }
+
+    .panel-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--nexus-accent);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .persona-card {
+      background: rgba(0,0,0,0.3);
+      padding: 1.5rem;
+      border-left: 2px solid var(--nexus-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .persona-card h3 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .journey-stage {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px dashed var(--nexus-border);
+    }
+
+    .journey-stage:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .stage-name {
+      flex: 0 0 150px;
+      font-weight: 600;
+      color: #aaa;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .nexialist-action {
+      background: linear-gradient(135deg, rgba(211, 74, 74, 0.05) 0%, rgba(184, 157, 106, 0.05) 100%);
+      border: 1px solid var(--nexus-accent);
+    }
+
+    .nexialist-action .panel-title {
+      color: #fff;
+    }
+
+    .impact-value {
+      color: var(--nexus-accent);
+      font-family: monospace;
+      font-size: 1.1rem;
+    }
+
+    .loader {
+      display: none;
+      text-align: center;
+      padding: 4rem;
+      font-family: monospace;
+      color: var(--nexus-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Grain overlay originado do style.css master -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="nexus-container">
+    <header class="nexus-header">
+      <div>
+        <h1>Nexus Oculto</h1>
+        <p>Central de Inteligência Estratégica Peregrin</p>
+      </div>
+      <div>
+        <select id="clientSelect" class="client-selector">
+          <option value="paladino">Paladino Chocolates</option>
+          <option value="icibra">Cimento Itaqui (ICIBRA)</option>
+        </select>
+      </div>
+    </header>
+
+    <div id="loader" class="loader">Decodificando Matrizes...</div>
+
+    <main id="contentArea" class="panels">
+      <!-- Conteúdo inserido via JS -->
+    </main>
+  </div>
+
+  <script src="/nexus.js" type="module"></script>
+</body>
+</html>

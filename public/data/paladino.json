@@ -1,0 +1,53 @@
+{
+  "cliente": "Paladino Chocolates",
+  "segmento": "Chocolateria Premium / Gourmet",
+  "personas": [
+    {
+      "nome": "A Hedonista Furtiva",
+      "dilema_central": "A tensão entre manter uma imagem de disciplina/fitness e a necessidade compulsiva de pequenos luxos que a tirem da rotina.",
+      "drive_consumo": "Chocolate como micro-fuga validada. Ela compra porque a embalagem e o cacau de origem transformam a 'escapada da dieta' em um ato de sofisticação e auto-cuidado.",
+      "estetica": "Minimalismo com peso, texturas foscas e toques de dourado/cobre. Rejeita designs infantis ou com chamadas apelativas para 'fitness', prefere o 'luxo silencioso'.",
+      "objecoes_ocultas": "Se parece frágil, produzido em massa ou se a embalagem amassar na sacola, ela perde toda a justificação emocional da compra e considera dinheiro jogado fora."
+    },
+    {
+      "nome": "O Apóstolo do Presente",
+      "dilema_central": "A ansiedade social aguda de presentear e ser lido como genérico ou 'mão de vaca'. Precisa comprar afeto e respeito.",
+      "drive_consumo": "O chocolate como moeda de status e transferência de refinamento. Ele compra não pelo sabor, mas pela cara que a contraparte fará ao desembrulhar.",
+      "estetica": "Arquitetura monumental em escala reduzida. Caixas rígidas, peso tátil elevado, laços que demandam protocolo para serem desfeitos.",
+      "objecoes_ocultas": "Se quem recebe o presente não reconhecer imediatamente que custou caro, a missão falhou. Ele tem medo do produto parecer barato se colocado sobre a mesa de um chefe."
+    }
+  ],
+  "jornada": {
+    "descoberta": {
+      "contexto": "Entra num empório premium de São Luís procurando vinhos ou presentes e se depara com a ilha de destque.",
+      "gatilho": "Ancoragem Visual: Produto posicionado metodicamente próximo a vinhos de R$ 500, pegando carona na faixa de preço mental da prateleira."
+    },
+    "consideracao": {
+      "contexto": "Pegar o produto na mão e examinar o rótulo.",
+      "gatilho": "Escassez Oculta e Antifragilidade: A indicação de 'Lotes numerados e limitados a micro safras'. Passa a ideia de 'Se não levar agora, essa safra acaba'."
+    },
+    "compra": {
+      "contexto": "Decisão no caixa.",
+      "gatilho": "Prova Social de Nicho (Autoridade Silenciosa): Um pequeno selo monocromático discreto indicando prêmio ou seleção de um chocolatier famoso."
+    }
+  },
+  "acao_nexialista": {
+    "nome_acao": "A Confraria do Cofre Frio",
+    "foco": "Hedonista Furtiva e Alta Sociedade",
+    "conceito": "Envio de caixas fortes-acrílicas climatizadas, trancadas com cadeado físico, para a casa de 50 líderes de opinião, médicos e CEOs. Dentro do cubo fosco, a nova linha Paladino. Para pegar a chave, eles devem acessar um link e confirmar o endereço para envio do 'Portador da Chave' — vestidos socialmente —, garantindo a experiência e postagem nas redes.",
+    "itens_necessarios": [
+      "50 Caixas de acrílico opaco modificado",
+      "50 Cadeados customizados",
+      "Sistema de Landing Page com senha (para a chave)",
+      "Logística premium (motoboys/carros trajes executivos)"
+    ],
+    "orcamento_base": "R$ 15.000 a R$ 25.000",
+    "impacto_esperado": "Explosão de earned-media pela curiosidade (FOMO). O chocolate paladino é ancorado permanentemente como 'joia valiosa que deve ser trancada', eliminando qualquer comparação de preço com chocolates comerciais.",
+    "isolamento_acoes_complementares": {
+      "justificativa": "Para viabilizar ou testar, podemos separar a entrega em dois pacotes menores.",
+      "acao_isolada": "O Envio de uma amostra com a 'chave' como convite metálico físico para buscar a barra num ponto de venda (Empório em São Luís).",
+      "vantagens": "Orçamento despenca para R$ 2.000. Força a persona a pisar no PDV parceiro.",
+      "desvantagens": "A taxa de conversão (ida física da pessoa VIP) será consideravelmente menor que receber a experiência completa no conforto de casa (a caixa trancada)."
+    }
+  }
+}

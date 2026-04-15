@@ -1,0 +1,53 @@
+{
+  "cliente": "Cimento Itaqui - ICIBRA",
+  "segmento": "Construção Civil B2B e B2C",
+  "personas": [
+    {
+      "nome": "O Mestre de Obras Inseguro",
+      "dilema_central": "O pavor constante de uma estrutura que desaba, lajes que trincam e perder a reputação inabalável de décadas construída no boca a boca.",
+      "drive_consumo": "Ele não compra cimento, compra 'paz de espírito e blindagem contra pepinos na obra'. A marca precisa representar fortaleza intransponível.",
+      "estetica": "Brutalismo limpo. Azul marinho intenso, cinza cimento, fontes grossas, claras, legíveis a 5 metros de distância num galpão escuro. Ousadia de marketing que soe frívola destrói a crença na força do produto.",
+      "objecoes_ocultas": "Se a embalagem é muito bonitinha e 'marqueteira', o foco deles não tá no pó dentro do saco. O produto deve mostrar força técnica, não piadinha pronta."
+    },
+    {
+      "nome": "O Comprador de Atacado Calculista",
+      "dilema_central": "Sufocado entre a diretoria comercial querendo redução de custos e a engenharia ameaçando pará-lo por falta de produto. O medo primário é a ruptura na logística.",
+      "drive_consumo": "Previsibilidade férrea. Ele precisa que caminhões encostem na data e hora marcadas.",
+      "estetica": "Dados frios, dashboards executivos, atendimento em canais blindados com documentação instantânea (WhatsApp oficial com robôs de nota fiscal).",
+      "objecoes_ocultas": "O preço tá ótimo, mas se o fabricante não me priorizar e a carga não chegar sábado de manhã toda a economia vai por ralo."
+    }
+  ],
+  "jornada": {
+    "descoberta": {
+      "contexto": "Pilhas alinhadas do Cimento Itaqui numa grande revenda, visível logo na entrada.",
+      "gatilho": "Familiaridade Brutal + Viés de Quantidade: Prateleiras perfeitamente empilhadas passam a mensagem implícita de controle e capacidade massiva de entrega."
+    },
+    "consideracao": {
+      "contexto": "Lendo as especificações da sacaria com o vendedor.",
+      "gatilho": "Autoridade Científica Focal: Em vez de prometer 'O melhor', promete 'Secagem 15% superior testada pelas normas X', focado num dado único e incontestável."
+    },
+    "compra": {
+      "contexto": "Fechar o lote para a obra.",
+      "gatilho": "Alívio Logístico Imediato: Garantia de entrega mapeada, 'o seu risco acaba quando a nota é emitida'."
+    }
+  },
+  "acao_nexialista": {
+    "nome_acao": "A Obra-Prima Brutalista",
+    "foco": "Engenheiros, Mestres de Obra e Branding Urbano",
+    "conceito": "Construir e doar um monumento público permanente para a cidade (ex: em São Luís ou interior). Convidar um escultor local renomado para fazer a obra inteiramente em Cimento Itaqui de alta resistência. O evento de inauguração contará apenas com prefeitos, engenheiros e construtores. A praça agora é um testamento permanente da resistência da marca.",
+    "itens_necessarios": [
+      "Permissão Municipal/Acordo Pátio Público",
+      "Lote de Cimento Especial",
+      "Escultor/Arquiteto com credenciais de peso",
+      "Cobertura de mídia (Drone, Filmagens B2B)"
+    ],
+    "orcamento_base": "R$ 40.000 a R$ 80.000 + custos de estrutura",
+    "impacto_esperado": "Transição de categoria instantânea. Itaqui vaza de 'commodity de obra' para 'Patrimônio de Infraestrutura'. Transmite confiança de longo prazo e ganha laços com diretores B2B num ambiente de celebração civilística.",
+    "isolamento_acoes_complementares": {
+      "justificativa": "Se os prazos governamentais imepdirem a obra pública permanente, podemos faturar a ação.",
+      "acao_isolada": "Expo 'Resiliência e Forma' em um galpão fechado privado ou museu, chamando estudantes de engenharia e arquitetos para fazerem mockups/maquetes usando apenas o cimento Itaqui.",
+      "vantagens": "Muito mais rápido. Evita a burocracia de prefeituras. Cria engajamento brutal com futuros decisores (os estudantes/arquitetos jovens).",
+      "desvantagens": "Não gera o outdoor eterno que é um monumento público massivo cravado na via expressa da cidade."
+    }
+  }
+}
